@@ -1,0 +1,7 @@
+# .gitignore
+# vim: set ft=ignore
+
+build/**
+!build/.gitkeep
+
+roms/**
