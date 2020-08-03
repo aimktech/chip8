@@ -7,6 +7,8 @@ Chip8 Emulator
 
 *chip8* is a C++ emulator for the Chip8 Virtual Computer.
 
+|invaders| |tetris|
+
 ----
 
 Compilation
@@ -68,3 +70,9 @@ This program is released under the Apache License 2.0. See the bundled `LICENSE`
 .. |license| image:: https://img.shields.io/badge/license-Apache--2.0-blue.svg?style=flat-square
     :target: https://raw.githubusercontent.com/aimktech/amtTimer/master/LICENSE.txt
     :alt: License
+
+.. |invaders| image:: https://github.com/aimktech/chip8/blob/master/screenshots/invaders.png
+    :alt: Space Invaders
+
+.. |tetris| image:: https://github.com/aimktech/chip8/blob/master/screenshots/tetris.png
+    :alt: Tetris
