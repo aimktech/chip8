@@ -30,6 +30,7 @@ void printInfo()
     std::cout << "F2  : reset emulator speed" << std::endl;
     std::cout << "F3  : increase emulator speed" << std::endl;
     std::cout << "F10 : restart emulator" << std::endl;
+    std::cout << "P   : pause the emulator" << std::endl;
 }
 
 // main entry point

@@ -131,6 +131,7 @@ void VM::run()
     int framerate = 1000 / fps;
     int lasttime = SDL_GetTicks();
     int speed = 1;
+    bool isPaused = false;
 
     while(!quit)
     {
@@ -167,6 +168,10 @@ void VM::run()
                             data_->cpu->reset();
                             break;
 
+                        case SDLK_p:            // Pause/unpause the emulator
+                            isPaused = !isPaused;
+                            break;
+
                         default:
                             data_->keyboard->update(e);
                     }
@@ -177,22 +182,28 @@ void VM::run()
             }
         }
 
-        // update CPU
-        for(int i =0; i<speed; i++) {
-            data_->cpu->update();
+        if( !isPaused )
+        {
+            // update CPU
+            for(int i =0; i<speed; i++) {
+                data_->cpu->update();
+            }
         }
 
         // update display
         data_->display->render();
 
-        // update timers at 60fps
-        if( SDL_GetTicks() - lasttime >= framerate ) {
+        if( !isPaused )
+        {
+            // update timers at 60fps
+            if( SDL_GetTicks() - lasttime >= framerate ) {
 
-            // update timers
-            data_->updateTimers();
+                // update timers
+                data_->updateTimers();
 
-            // update time variable
-            lasttime = SDL_GetTicks();
+                // update time variable
+                lasttime = SDL_GetTicks();
+            }
         }
     }
 }
