@@ -61,7 +61,7 @@ This program is released under the Apache License 2.0. See the bundled `LICENSE`
 
 .. _here: https://www.zophar.net/pdroms/chip8.html
 
-.. _LICENSE: https://github.com/aimktech/chip8/blob/master/LICENSE.TXT
+.. _LICENSE: https://github.com/aimktech/chip8/blob/master/LICENSE.txt
 
 .. |cpp| image:: https://img.shields.io/static/v1?label=c%2b%2b&message=17&color=blue&style=flat-square
     :target: https://en.wikipedia.org/wiki/C%2B%2B17
