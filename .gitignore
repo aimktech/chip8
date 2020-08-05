@@ -1,6 +1,8 @@
 # .gitignore
 # vim: set ft=ignore
 
+.vscode/**
+
 build/**
 !build/.gitkeep
 
