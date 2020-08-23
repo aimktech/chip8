@@ -28,7 +28,7 @@ class BaseExceptError : public std::exception
         const char *message_{nullptr};
 };
 
-// exception thrown when an issue with the MMU occures
+// exception thrown when an issue with the MMU occurs
 class MMUError: public BaseExceptError
 {
     public:
@@ -37,7 +37,7 @@ class MMUError: public BaseExceptError
         { }
 };
 
-// exception thrown when an issue with the CPU occures
+// exception thrown when an issue with the CPU occurs
 class CPUError: public BaseExceptError
 {
     public:
@@ -46,7 +46,7 @@ class CPUError: public BaseExceptError
         { }
 };
 
-// exception thrown when an issue with the Display occures
+// exception thrown when an issue with the Display occurs
 class DisplayError: public BaseExceptError
 {
     public:
@@ -55,7 +55,7 @@ class DisplayError: public BaseExceptError
         { }
 };
 
-// exception thrown when an issue with the VM occures
+// exception thrown when an issue with the VM occurs
 class VMError: public BaseExceptError
 {
     public:
