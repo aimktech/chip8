@@ -262,7 +262,7 @@ bool CPU::update()
                         // check the upper bit only
                         if( (sprite & 0x80) > 0 )
                         {
-                            // if this is true then a collision occured
+                            // if this is true then a collision occurred
                             if( data_->putPixel(data_->V[x] + col, data_->V[y] + row) )
                                 data_->V[Register::VF] = 1;
                         }
