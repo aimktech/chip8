@@ -69,7 +69,7 @@ void CPU::OpaqueData::reset()
 
 /* Draw a pixel on the screen
  * Returns:
- *      True if a collision occured
+ *      True if a collision occurred
  */
 bool CPU::OpaqueData::putPixel(int x, int y)
 {
@@ -215,17 +215,17 @@ bool CPU::update()
                     data_->V[x] -= data_->V[y];
                     break;
 
-                case 0x06:  // SHR Vx, 1
+                case 0x0006:  // SHR Vx, 1
                     data_->V[Register::VF] = (data_->V[x] & 0x01);
                     data_->V[x] >>=  1;
                     break;
 
-                case 0x07:  // SUBN Vx, Vy
+                case 0x0007:  // SUBN Vx, Vy
                     data_->V[Register::VF] = (data_->V[y] > data_->V[x]) ? 1 : 0;
                     data_->V[x] = data_->V[y] - data_->V[x];
                     break;
 
-                case 0x0E:  // SHL Vx, 1
+                case 0x000E:  // SHL Vx, 1
                     data_->V[Register::VF] = (data_->V[x] & 0x80) ? 1 : 0;
                     data_->V[x] <<= 1;
                     break;
@@ -334,11 +334,7 @@ bool CPU::update()
                     break;
 
                 case 0x001E:  // ADD I, VX
-                    if( (data_->I + data_->V[x]) > 0x0FFF )
-                        data_->V[Register::VF] = 1;
-                    else
-                        data_->V[Register::VF] = 0;
-
+                    data_->V[Register::VF] = ( (data_->I + data_->V[x]) > 0x0FFF ) ? 1 : 0;
                     data_->I += data_->V[x];
                     break;
 
