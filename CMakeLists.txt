@@ -41,8 +41,9 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/includes)
 include_directories(${SDL2_INCLUDE_DIRS}/..)
 
-file(GLOB SOURCES src/*.cpp)
+# Chip8 runtime
+add_executable(c8run src/cpu.cpp src/display.cpp src/keyboard.cpp src/main.cpp src/mmu.cpp src/vm.cpp)
+target_link_libraries(c8run ${SDL2_LIBRARIES})
 
-add_executable(chip8 ${SOURCES})
-
-target_link_libraries(chip8 ${SDL2_LIBRARIES})
+# Chip8 disassembler
+add_executable(c8dasm src/disassembler.cpp src/c8dasm.cpp)
