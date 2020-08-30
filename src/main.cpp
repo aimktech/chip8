@@ -14,9 +14,9 @@ const char* version="1.0.0";
 // functions
 void help()
 {
-    std::cout << "chip8 emulator - " << version << " - aimktech" << std::endl;
+    std::cout << "Chip8 emulator - " << version << " - aimktech" << std::endl;
     std::cout << "Syntax:" << std::endl;
-    std::cout << "    chip8 <ROM file>" << std::endl;
+    std::cout << "    c8run <ROM file>" << std::endl;
     std::cout << std::endl;
     std::cout << "Another Chip8 emulator written in C++." << std::endl;
     std::cout << std::endl;
@@ -24,7 +24,7 @@ void help()
 
 void printInfo()
 {
-    std::cout << "chip8 emulator - " << version << " - aimktech" << std::endl;
+    std::cout << "Chip8 emulator - " << version << " - aimktech" << std::endl;
     std::cout << "ESC : exit emulator" << std::endl;
     std::cout << "F1  : reduce emulator speed" << std::endl;
     std::cout << "F2  : reset emulator speed" << std::endl;
