@@ -327,11 +327,6 @@ void Disassembler::render()
             count = 0;
         }
 
-        // // print the label on a separate line
-        // if( labels_.find(PC_) != labels_.end() ) {
-        //     std::cout << string_format("L%003X:", PC_) << std::endl;
-        // }
-
         // print the opcode
         uint16_t opcode = next();
         std::cout << string_format("    %-30s; %0004X", toString(opcode).c_str(), opcode) << std::endl;
