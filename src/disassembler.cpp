@@ -287,23 +287,24 @@ void Disassembler::render()
     // loop through the whole ROM
     while( PC_ < max_address_ )
     {
+        // check if this address is in the labels list
+        if( labels_.find(PC_) != labels_.end() )
+        {
+            // print the label on a separate line
+            if( count ) {
+                std::cout << std::endl;
+                count = 0;
+            }
+            std::cout << string_format("L%003X:", PC_) << std::endl;
+        }
+
         // process data block
         if( codemap_.find(PC_) == codemap_.end() )
         {
-            // check if this address is in the labels list
-            if( labels_.find(PC_) != labels_.end() )
-            {
-                // print the label on a separate line
-                if( count ) {
-                    std::cout << std::endl;
-                    count = 0;
-                }
-                std::cout << string_format("L%003X:", PC_) << std::endl;
-            }
 
             // format the data
             if( count == 0 )
-                std::cout << string_format("    .    %02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
+                std::cout << string_format("    DB   %02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
             else
                 std::cout << string_format(", %02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
 
@@ -326,10 +327,10 @@ void Disassembler::render()
             count = 0;
         }
 
-        // print the label on a separate line
-        if( labels_.find(PC_) != labels_.end() ) {
-            std::cout << string_format("L%003X:", PC_) << std::endl;
-        }
+        // // print the label on a separate line
+        // if( labels_.find(PC_) != labels_.end() ) {
+        //     std::cout << string_format("L%003X:", PC_) << std::endl;
+        // }
 
         // print the opcode
         uint16_t opcode = next();
