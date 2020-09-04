@@ -32,7 +32,7 @@ To load a ROM in the emulator, just pass it on the command line:
 
 .. code:: bash
 
-    $ bin/chip8 ../../roms/TETRIS
+    $ bin/c8run ../../roms/TETRIS
 
 The following actions can be performed during runtime:
 
@@ -42,6 +42,49 @@ The following actions can be performed during runtime:
 - ``<F3>`` : increase the emulator speed
 - ``<F10>`` : restart the emulator
 - ``P`` : pause the emulator
+
+The disassembler will try to extract the assembly source from the bytes code.
+
+.. code:: bash
+
+    $ bin/c8dasm ../../roms/BLITZ
+
+The output of the disassembler shows labels, data section and the initial opcode:
+
+.. code::
+
+    ;----------------------------------------------------
+    ; ROM Name: BLITZ
+    ; ROM Size: 391 Bytes
+    ;----------------------------------------------------
+        JP   L217                     ; 1217
+        DB   42, 4C, 49, 54
+        DB   5A, 20, 42, 79
+        DB   20, 44, 61, 76
+        DB   69, 64, 20, 57
+        DB   49, 4E, 54, 45
+        DB   52
+    L217:
+        LD   I, L341                  ; A341
+        LD   V0, #04                  ; 6004
+        LD   V1, #09                  ; 6109
+        LD   V2, #0E                  ; 620E
+        LD   V7, #04                  ; 6704
+    L221:
+        DRW  V0, V1, #0E              ; D01E
+        ADD  I, V2                    ; F21E
+        ADD  V0, #0C                  ; 700C
+        SE   V0, #40                  ; 3040
+        JP   L221                     ; 1221
+        LD   V0, K                    ; F00A
+    L22D:
+        CLS                           ; 00E0
+        CALL L2D9                     ; 22D9
+        LD   V0, K                    ; F00A
+        CLS                           ; 00E0
+        LD   VE, V7                   ; 8E70
+        LD   I, L31E                  ; A31E
+
 
 ROMS
 ----
