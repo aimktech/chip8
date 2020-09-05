@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <fstream>
+#include <memory>
 #include <set>
 
 // main disassembler class
