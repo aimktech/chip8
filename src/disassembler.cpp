@@ -80,9 +80,9 @@ std::string toString(uint16_t opcode)
                 case 0x0003:    // XOR Vx, Vy
                     return string_format("XOR  V%X, V%X", x, y);
                 case 0x0004:    // ADC Vx, Vy
-                    return string_format("ADC  V%X, V%X", x, y);
+                    return string_format("ADD  V%X, V%X", x, y);
                 case 0x0005:    // SBC Vx, Vy
-                    return string_format("SBC  V%X, V%X", x, y);
+                    return string_format("SUB  V%X, V%X", x, y);
                 case 0x0006:    // SHR Vx, 1
                     return string_format("SHR  V%X, #1", x);
                 case 0x0007:    // SUBN Vx, Vy
@@ -304,9 +304,9 @@ void Disassembler::render()
 
             // format the data
             if( count == 0 )
-                std::cout << string_format("    DB   %02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
+                std::cout << string_format("    DB   #%02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
             else
-                std::cout << string_format(", %02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
+                std::cout << string_format(", #%02X", rom_[PC_ - ROM_CODE_BEGIN] & 0xFF);
 
             // print only 4 bytes per line
             count += 1;
