@@ -47,3 +47,16 @@ target_link_libraries(c8run ${SDL2_LIBRARIES})
 
 # Chip8 disassembler
 add_executable(c8dasm src/disassembler.cpp src/c8dasm.cpp)
+
+# Chip8 assembler
+add_executable(c8asm
+               src/c8asm.cpp
+               src/asm/parser.cpp
+               src/asm/arithm.cpp
+               src/asm/jump.cpp
+               src/asm/load.cpp
+               src/asm/logic.cpp
+               src/asm/misc.cpp
+               src/assembler.cpp
+)
+
