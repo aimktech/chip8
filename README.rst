@@ -32,7 +32,7 @@ To load a ROM in the emulator, just pass it on the command line:
 
 .. code:: bash
 
-    $ bin/c8run ../../roms/TETRIS
+    $ bin/c8run ../../roms/BLITZ
 
 The following actions can be performed during runtime:
 
@@ -47,7 +47,7 @@ The **disassembler** will try to extract the assembly source from the bytes code
 
 .. code:: bash
 
-    $ bin/c8dasm ../../roms/BLITZ
+    $ bin/c8dasm ../../roms/BLITZ > blitz.asm
 
 The output of the disassembler shows labels, data section and the initial opcode:
 
@@ -55,15 +55,15 @@ The output of the disassembler shows labels, data section and the initial opcode
 
     ;----------------------------------------------------
     ; ROM Name: BLITZ
-    ; ROM Size: 391 Bytes
+    ; ROM Size: 393 Bytes
     ;----------------------------------------------------
         JP   L217                     ; 1217
-        DB   42, 4C, 49, 54
-        DB   5A, 20, 42, 79
-        DB   20, 44, 61, 76
-        DB   69, 64, 20, 57
-        DB   49, 4E, 54, 45
-        DB   52
+        DB   #42, #4C, #49, #54
+        DB   #5A, #20, #42, #79
+        DB   #20, #44, #61, #76
+        DB   #69, #64, #20, #57
+        DB   #49, #4E, #54, #45
+        DB   #52
     L217:
         LD   I, L341                  ; A341
         LD   V0, #04                  ; 6004
@@ -91,7 +91,8 @@ and build the corresponding ROM.
 .. code:: bash
 
     $ bin/c8asm blitz.asm blitz.rom
-
+    190 lines parsed.
+    393 bytes generated.
 
 
 ROMS
