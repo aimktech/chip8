@@ -43,7 +43,7 @@ The following actions can be performed during runtime:
 - ``<F10>`` : restart the emulator
 - ``P`` : pause the emulator
 
-The disassembler will try to extract the assembly source from the bytes code.
+The **disassembler** will try to extract the assembly source from the bytes code.
 
 .. code:: bash
 
@@ -84,6 +84,14 @@ The output of the disassembler shows labels, data section and the initial opcode
         CLS                           ; 00E0
         LD   VE, V7                   ; 8E70
         LD   I, L31E                  ; A31E
+
+The **assembler** takes the output of the disassembler, or any Chip8 assembly source
+and build the corresponding ROM.
+
+.. code:: bash
+
+    $ bin/c8asm blitz.asm blitz.rom
+
 
 
 ROMS
