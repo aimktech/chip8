@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
             c8asm.write(std::string(argv[2]));
         }
     } catch(std::string &e) {
-        std::cerr << "An error occurred during disassembly procedure:";
+        std::cerr << "An error occurred during assembly procedure:";
         std::cerr << e << std::endl;
     }
 
