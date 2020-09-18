@@ -21,14 +21,13 @@ uint16_t add(uint16_t PC, t_token t, Parser* p)
         int r1 = convert(op1.second);
         int r2 = convert(op2.second);
 
-        if( op2.first == TOKEN_VALUE ) {
-            //  7xkk - ADD Vx, byte
+        //  7xkk - ADD Vx, byte
+        if( op2.first == TOKEN_VALUE )
             value = (0x7000) | (r1 & 0x0F) << 8 | (r2 & 0xFF);
-        }
-        if( op2.first == TOKEN_REGISTER ) {
-            // 8xy4 - ADD Vx, Vy
+
+        // 8xy4 - ADD Vx, Vy
+        if( op2.first == TOKEN_REGISTER )
             value = (0x8004) | (r1 & 0x0F) << 8 | (r2 & 0x0F) << 4;
-        }
 
         if( value == 0 )
             throw std::string("Invalid second operand for ADD.");
