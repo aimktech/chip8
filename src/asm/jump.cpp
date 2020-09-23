@@ -43,7 +43,7 @@ uint16_t jumpOrCall(uint16_t PC, t_token t, Parser* p)
         if( op1.first == TOKEN_OPERAND ) {
             jumps_table.push_back(std::make_pair(PC, op1.second));
         } else {
-            throw std::string("Invalid operand in 'JP V0, nnn' instruction.");
+            throw std::string("Invalid operand in 'JP' instruction.");
         }
     }
 
