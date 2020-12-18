@@ -101,6 +101,15 @@ ROMS
 By default the emulator is provided with no ROMS.
 You can find ROMs in the public domain `here`_.
 
+Links
+-----
+
+Here is a curated list of links that might be useful when building a Chip8 emulator
+
+- Chip8 `documentation`_ by David WINTER [PDF]
+- Chip8 `Technical reference`_
+- `Building`_ the Dream 6800 (Electronics Australia 1979)
+- `Programming`_ in Chip8 (Electronics Today International 1981)
 
 License
 -------
@@ -112,6 +121,14 @@ This program is released under the Apache License 2.0. See the bundled `LICENSE`
 .. _SDL2: https://www.libsdl.org
 
 .. _here: https://www.zophar.net/pdroms/chip8.html
+
+.. _documentation: http://vanbeveren.byethost13.com/stuff/CHIP8.pdf
+
+.. _Technical reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
+
+.. _Building: https://archive.org/stream/EA1979/EA%201979-05%20May#page/n85/mode/2up
+
+.. _Programming: https://archive.org/stream/ETIA1981/ETI%201981-11%20November#page/n113/mode/2up
 
 .. _LICENSE: https://github.com/aimktech/chip8/blob/master/LICENSE.txt
 
